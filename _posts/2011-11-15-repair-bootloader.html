@@ -1,0 +1,44 @@
+--- 
+layout: post
+title: repair bootloader
+published: false
+meta: 
+  _edit_last: "1"
+  _wp_trash_meta_time: "1321450533"
+  _wp_trash_meta_status: draft
+tags: 
+- GNU/Linux
+type: post
+status: trash
+---
+THE METHOD I'M ABOUT TO SHOW YOU CAN BE DONE FROM:
+
+. A LIVE DISK/CD/DVD
+. A LIVE USB
+. ANY OTHER LIVE MEDIA
+. AN INSTALLED VERSION OF UBUNTU
+
+The absolute EASIEST WAY, to (re)install GRUB is to use a little program   called Boot-Repair. It does all that work to do with commands in the   Terminal to reinstall GRUB for you, and it's really noob friendly, with a   simple GUI, that you merely have to indicate which OS you want as your   main Operating System etc, IF YOU WANT TO! This is all under advanced   options, but really, it's not so advanced, anyway to get Boot-Repair:
+
+Do this in the Terminal:
+
+sudo add-apt-repository ppa:yannubuntu/boot-repair
+
+sudo apt-get update &amp;&amp; sudo apt-get install -y  boot-repair-ubuntu
+Now, run the program (search for it in Unity, or go to: System  ----&gt;  Administration ----&gt; Boot Repair, in Gnome 2/ Classic Mode  in 11.04  Natty Narwhal)
+
+Then, once the program is done reinstalling GRUB (should take at max 2  minutes), do this:
+
+sudo update-grub
+This is probably not necessary, but it will just eradicate the potential  for any errors, whatsoever!
+
+Info for this can be found by:
+
+a) going to: https://help.ubuntu.com/community/Boot-Repair
+b) messaging me here.
+
+Hope this helped...
+
+&nbsp;
+
+http://ubuntuforums.org/archive/index.php/t-24113.html

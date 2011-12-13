@@ -1,0 +1,33 @@
+--- 
+layout: post
+title: Modificar enlaces con jQuery
+published: true
+meta: 
+  _edit_last: "1"
+tags: 
+- jQuery
+type: post
+status: publish
+
+categories: 
+- jquery
+---
+<div>
+Modificar el destino de los enlaces con jQuery.
+Código para cambiar el atributo href de una lista de links<!--more-->:
+{% highlight javascript %}
+// a.modificables es el elector
+// en este caso selecciona todos los enlaces con la clase modificable
+$("a.modificables").each(  function() {  
+// a .each le pasamos la función como parametro 
+      this.href = "javascript:alert('"+this.href+"')"; 
+     // this.href es el atributo href de cada enlace 
+    // de los que abarca el selector
+   }// fin de la función
+); // fin de .each
+{% endhighlight %}
+
+</div>
+<em>En este ejemplo se cambia el destino por un pequeño javascript que saca por un alert el destino de cada link</em>
+<br>
+Fuente: <a href="http://stackoverflow.com/questions/179713/how-to-change-the-href-for-a-hyperlink-using-jquery">stackoverflow</a>

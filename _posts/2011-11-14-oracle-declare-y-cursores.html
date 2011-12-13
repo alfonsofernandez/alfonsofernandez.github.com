@@ -1,0 +1,206 @@
+--- 
+layout: post
+title: Oracle DECLARE y cursores
+published: false
+meta: 
+  _edit_last: "1"
+  _wp_trash_meta_time: "1321450533"
+  _wp_trash_meta_status: draft
+tags: 
+- Bases de datos
+- cursores
+- oracle
+type: post
+status: trash
+---
+¿Para son los bloques DECLARE y cursores y para que sirven ?
+
+¿Cómo se crean bloques de declaraciones?
+
+Un bloque SQL tiene tres partes: una declarativa, una ejecutable y una última para el manejo de intrsucciones( warnings y condiciones de error). Destas artes, sólo la partes ejecutable es obligatoria.
+
+[DECLARE
+-- declaraciones]
+
+BEGIN
+-- sentencias
+[EXCEPTION
+-- manejo de excepciones]
+END;
+
+<strong>- Declaración de variables y constantes.</strong>
+
+En la parte declarativa se pueden declarar variables y constantes. Por ejemplo:
+
+DECLARE
+total number(6,2);
+nombre varchar(30):='JUANA';
+maximo CONSTANT number(4) := 9999;
+
+<strong>%TYPE. </strong>Si necesitamos que el tipo de datos coincida con el definido para una columna de una tabla.
+
+DECLARE
+
+valor number(4,2);
+auxvalor valor%TYPE;
+auxnif votantes.dni%TYPE;
+
+Ventaja importante, si el tipo de dato de una columna cambia , no tenemos que reescribir el script, porque seguirá funcionando.
+
+<strong>%ROWTYPE </strong>el atributo %ROWTYPE obtiene un tipo de registro que represnta una fila de una tabla. Los campos de registro y las correspondientes columnas de la tabla tienen el mismo nombre y el mismo tipo de datos.
+
+DECLARE
+
+Vot votantes<strong>%ROWTYPE;</strong>
+
+&nbsp;
+
+<strong>- Asignar valor a una variable</strong>
+
+Por defecto las variables se inicializan a NULL.
+Se les puede asignar de dos formas: a través de una expresión, o a través de una sentencia SELECT.
+
+aux_valor:=35;
+aux_valor :=total-10;
+aux_nombre:='ESTEBAN'
+
+SELECT dni <strong>INTO</strong> auxnif FROM votantes WHERE ...
+SELECT dni, nombre <strong>INTO</strong> auxnif, auxnombre FROM votantes WHERE...
+
+<strong>- Cursor </strong>
+
+Oracle utilzará áreas de trabajo para ejecutar sentencias SQL y almacenar la información procesada.
+El uso de cursores permite dar nombre a un área de trabajo y acceder a la información almacenada en ella.
+
+Cuando se declarar aunc rusor se le da un nombre, y se le asigna a una consulta especifica.
+
+<strong>CURSOR nombre_cursor IS sentencia_select; </strong>
+Ejemplo:
+
+<strong> DECLARE
+CURSOR c1 IS SELECT dni, sexo from votantes where letra='A' and colegio=1;</strong>
+
+Ahora es como si el resultado de ejecutar la sentencia fuera una tabla llamada c1 que podemor ir recorriendo fila a fila.
+
+&nbsp;
+
+<strong>Trabajando con OPEN, FETCH y CLOSE. </strong>(Aunque esta forma de trabajar con cursores es válida, recomendamos trabajar con cursores de un modo más sencillo, trbajando conCURSORES en un bucle for, que se explica en el siguiente apartado).
+
+Para trabajar con cursores se pueden utilizar los comandos <strong>OPEN, FETCH y CLOSE.</strong>
+
+<strong>OPEN</strong>
+Abre el cursor, es decir , ejecuta la consulta e identifica el resultado(las filas resultantes de la consulta).
+<strong>Al ejecutar OPEN, las filas no se devuelven.</strong>
+
+<strong>DECLARE</strong>
+
+<strong> CURSOR c1 IS SELECT dni, sexo FROM votantes WHERE letra='A' and colegio=1;
+</strong><strong>BEGIN
+OPEN c1;
+</strong><strong> ...
+END;</strong>
+
+<strong>FETCH</strong>
+Permite devoler las filas del resultado. Cada vez que se ejecuta FETCH el cursor avanza a la siguiente file del resultado.
+
+<strong>FECH c1 INTO var_dni, var_sexo;  -- donde var_dni y var_sexo son 2 variables que se habrán declarado previamente.
+</strong>Para cada columna que se devuelve en la consulta aosciada al cursor tendremos que tener una variable depués del INTO , con un tipo de datos compatible.
+
+<strong>CLOSE
+</strong> Cierra el cursor. Una vez cerrado podría volver a abrirse.
+
+&nbsp;
+
+Cada cursor tiene asociados cuatro atributos : <strong>%FOUND, %ISOPEN, %NOTFOUND, %ROWCOUT
+</strong>Tras abrir un cursor con <strong>OPEN</strong> y antes de que se haya hecho el primer <strong>FETCH </strong>
+- El atributo <strong>%FOUND</strong> contiene NULL
+<strong> </strong>- El valor de <strong>%ROWCOUNT</strong> es 0<strong> </strong>
+
+A partir de ese momento cada vez que hacemos FETCH,
+
+-%FOUND devolverá TRUE si el último FETCH devolvió una fila, o FALSE en caso contrario
+- %ROWCOUNT contendrá el número de filas a las que ya se ha realizado FETCH.
+
+EL atributo opuesto a %FOUND es %NOTFOUND
+EL atributo %ISOPEN devuelve
+· True si el cursor está abierto
+· false si no está abierto
+
+Ejemplo:
+Si c1 es un cursor que hemos definido, se podría utilizar expresiones como
+IF c1%FOUND THEN ....
+IF c1%ROWCOUNT &gt; 4 THEN ...
+
+<strong>CURSOR EN BUCLE FOR</strong> (en la asignatura defniremos de este modo los cursores)
+Al trabajar con cursores, se puede simpligricar el código utilizando un bucle <strong>FOR</strong> en lugar de <strong>OPEN, FETCH y CLOSE</strong>.
+
+El bucle <strong>FOR</strong>:
+· abre implicitamente el cursor .
+· realiza FETCH repetidamente
+· y cierra el cursor cuando todas las filas han sido procesadas.
+En el bucle además de abrir el cursor se declara una variable (en el ejemplo que sigue regc1).
+· Esta variable sólo puede ser utilizada dentro del bucle.
+· Es una variable de tipo registro cuyos campos tienen el mismo ombre y tipo de datos que las columnas de la sentencia SELECT que figura en la definción del cursor.
+· Si alguna de las columnas fuese calculada sería necesario que tuviese un alias en la sentencia SELECT.
+
+Ejemplo:
+
+<strong>DECLARE
+</strong> ·
+·
+CURSOR c1 IS SELECT dni, sexo FROM votantes where letra='A' and colegio = 1;
+·
+·
+BEGIN
+·
+·
+·
+FOR regc1 IN c1 LOOP
+IF regc1.sexo ='V' THEN
+UPDATE votantes SET letra='B' WHERE dni=regc1.dni;
+ELSE
+UPDATE votantes SET colegio=3 WHERE dni=regc1.dni;
+END IF;
+END LOOP;
+·
+·
+END;
+
+&nbsp;
+
+Dentro de un bloque BEGIN-END se pueden utilizar estrucuras de control similares a las de otros lenguajes de programación.
+
+<strong>ESTRUCTURA DE CONTROL CONDICIONAL</strong>
+
+<strong>IF ...THEN ... END IF;  IF ...THEN ..ELSE...END IF; IF... THEN ...ELSEIF...THEN....ELSIF...THEN...[ELSE...]END IF;
+</strong>
+<strong>ESTRUCUTRAS DE CONTROL ITERATIVO
+</strong>
+FOR i IN min ...max LOOP
+...
+...
+END LOOP;
+WHILE condición LOOP
+...
+END LOOP;
+
+LOOP
+...
+...
+EXIT WHEN ....;
+END LOOP ;
+
+&nbsp;
+
+&nbsp;
+
+En la parte declarativa, las variables se pueden incializar a un valor específico o no hacerlo, mientras que las constantes han de ser incializadas en la parte declarativa.
+
+Fuentes:
+<a href="http://download.oracle.com/docs/cd/B19306_01/appdev.102/b14261/block_declaration.htm">http://download.oracle.com/docs/cd/B19306_01/appdev.102/b14261/block_declaration.htm</a>
+
+&nbsp;
+
+<a href="http://www.cheat-sheets.org/saved-copy/oracle_sql_reference.pdf">http://www.cheat-sheets.org/saved-copy/oracle_sql_reference.pdf
+</a><a href="http://www.yagc.ndo.co.uk/cheatsheets/plsql_cheatsheet.html">http://www.yagc.ndo.co.uk/cheatsheets/plsql_cheatsheet.html
+</a><a href="http://www.yagc.ndo.co.uk/cheatsheets/sql_cheatsheet.html">http://www.yagc.ndo.co.uk/cheatsheets/sql_cheatsheet.html</a>

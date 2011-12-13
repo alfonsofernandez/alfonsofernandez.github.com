@@ -1,0 +1,36 @@
+--- 
+layout: post
+title: Configurar apache2 ubuntu 11.10
+published: false
+meta: 
+  _edit_last: "1"
+tags: 
+- GNU/Linux
+- linux ubuntu apache apache2
+type: post
+status: draft
+---
+Docu wiki ubuntu
+<a href="https://help.ubuntu.com/community/ApacheMySQLPHP#Checking_PHP_5_installation">https://help.ubuntu.com/community/ApacheMySQLPHP
+
+</a>crear un fichero por cada site local en
+
+cd /etc/apache2/sites-available/
+touch www.siteone.local
+
+habilitar un site (Crea un hard-link)
+a2ensite nombredelfichero
+
+&nbsp;
+<pre>sudo /etc/init.d/apache2 restart
+habilitar mod_rewrite
+
+<code>a2enmod rewrite</code>
+
+<div><code>
+</code></div></pre>
+http://linuxemb.wikidot.com/virtualhost
+
+&nbsp;
+
+&nbsp;

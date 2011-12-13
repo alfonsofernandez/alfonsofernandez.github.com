@@ -1,0 +1,34 @@
+--- 
+layout: post
+title: Instalar g++ y ncurses en gnu/linux Debian y Ubuntu
+published: true
+meta: 
+  _edit_last: "1"
+tags: 
+- g++
+- GNU/Linux
+- ncurses
+type: post
+status: publish
+
+categories: 
+- gnu-linux
+
+---
+Con Ubuntu 11.10 no viene por defecto ni <b>g++</b> ni <b>ncurses</b> así que para instalarlos desde el terminal : 
+{% highlight Bash shell scripts %}
+sudo apt-get install g++
+sudo apt-get install libncurses5-dev
+{% endhighlight %}
+
+fácil :)
+
+si solo necesitas ncurses
+
+{% highlight Bash shell scripts %}
+sudo apt-get install build-essentials # este puede que ya lo tengas 
+sudo apt-get install libncurses5-dev
+{% endhighlight %}
+
+
+<b>Fuente:</b> <a href="http://ubuntuforums.org/showthread.php?t=296224">Ubuntu forums</a>

@@ -1,0 +1,44 @@
+--- 
+layout: post
+title: Problemas con teclados Apple Macbook con GNU/Linux (Ubuntu) (teclas < > )
+published: true
+meta: 
+  _edit_last: "1"
+  _thumbnail_id: "71"
+tags: 
+- Apple
+- GNU/Linux
+type: post
+status: publish
+
+categories: 
+- gnu-linux
+---
+Todos los problemas de re asignación de teclas se pueden solucionar creando un fichero .Xmodmap en nuestra carpeta home con la configuración deseada.
+[cc lang="bash"]touch ~/.Xmodmap[/cc]<br>
+ahora vamos a ver problemas específicos con teclados apple macbook  y teclados apple usb externos como el aluminium.
+<h3>Problema 1: Teclas<em> &gt; &lt; </em> y <em> ª ° \</em></h3><br>
+Solución: editar fichero .Xmodmap con esta líneas.
+[cc lang="bash"]
+keycode 49 = less greater less greater bar brokenbar bar 
+keycode 94 = U000AA degree U000AA degree backslash backslash backslash
+[/cc]
+Ojo, en otros lugares (como la wiki de ubuntu) verás esta otra configuración que es errónea para teclados españoles.
+[cc lang="bash"]
+keycode 49 = less greater less greater bar brokenbar bar
+keycode 94 = dead_circumflex degree dead_circumflex degree U2032 U2033 U2032
+[/cc]
+<b>Edit: </b>He actualizado la ayuda de Ubuntu con esta corrección.<a href="https://help.ubuntu.com/community/AppleKeyboard">Help Ubuntu community</a>
+(inglés)<br>
+Para que los cambios tengan efecto tienes que cerrar sesión de usuario y volver a entrar.
+Además si conectas un teclado externo usb con la sesión iniciada no se le aplicarán los cambios, tendrás que cerrar sesión e inciarla de nuevo con el teclado conectado.
+
+<h3>Problema 2: Teclado se convierte en teclado numérico</h3>
+Algunas veces (aún no he detectado cuando pasa exactamente) el teclado se convierte en teclado numérico, es el mismo efecto que el modo especial que tienen algunos teclados sin teclado numéricos que se suele activar con un tecla especial o tecla función.
+El caso es que no te escribe ninguna letra y pulsando sobre las letras solo escribe números.
+<b>Solución:</b> Pulsa tecla fn+F6 para volver a la normalidad.
+<em>Cuando encuentre una solución permanente editaré el post</em>
+
+<BR>
+Fuentes (errónea):
+<a href="https://help.ubuntu.com/community/AppleKeyboard">Help Ubuntu community</a>
