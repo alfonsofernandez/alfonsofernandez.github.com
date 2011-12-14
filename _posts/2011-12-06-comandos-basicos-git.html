@@ -22,21 +22,21 @@ categories:
 <style>  em { font-size: small; margin-bottom:50px }</style>
 Listado de los comandos más utilizados en el día a día trabajando con git <!--more-->, puedes  <a href="javascript:jQuery('em').toggle();">ocultar o mostrar explcaciones</a> si ya conoces lo que hace cada uno.
 <h4>Iniciar un repositorio</h4>
-<code lang="bash">git init mirepo.git</code>
+<pre class="sh">git init mirepo.git</pre>
 <em>Crea una carpeta en el directorio actual con el nombre mirepo.git con un subdirectorio oculto llamado .git/ donde están todos los ficheros del repositorio.</em>
 <h4>Añadir todo a el stagging area.</h4>
-<code lang="bash">git add .</code>
+<pre class="sh">git add .</pre>
 <em>Añade todos los archivos modificados o nuevo a el stagging area, todo archivo en stagging area formará parte del siguiente commit</em>
 <h4>Agregar un fichero indivdual al stagging area.</h4>
-<code lang="bash">git add nombre_de_fichero.txt</code>
+<pre class="sh">git add nombre_de_fichero.txt</pre>
 <h4>Agregar ficheros modificados y hacer Commit con comentario</h4>
-<code lang="bash">git commit -a -m "nuestro comentario sobre el commit"</code>
+<pre class="sh">git commit -a -m "nuestro comentario sobre el commit"</pre>
 <em>El parametro -a indica que se ejecute el comando git add previamente, así no hay que hacerlo en 2 pasos, pero no agregará ficheros untracked, es decir agregará y hará commit de los ficheros modificados que existían previamente en el anterior commit. Si tenemos ficheros nuevos tendremos que hacer 2 pasos, git add y git commit</em>
 <h4>Git status , conocer el estado de nuestro repositorio.</h4>
-<code lang="bash">git status</code>
+<pre class="sh">git status</pre>
 <em>Nos indica cuantos commits por delante o por detrás vamos de la rama principal de desarrollo, además indica que ficheros se han modificado y cuales estan untracked ( ficheros nuevos ), Muy útil para ver lo modificado y decidir que agregaremos en el siguiente commit y que cambios echaremos para atrás</em>
 <h4>Git log , mostrar el log local de nuestro repositorio.</h4>
-<code lang="bash">git log</code>
+<pre class="sh">git log</pre>
 <em>Si el log es largo se mostrará através del comando <strong>more</strong>, para movernos por el log, usamos <strong>f</strong> (forward) para ir hacia adelante <strong>b</strong> (backwards) para ir hacia atrás y <strong>q</strong> (quit) para salir del log</em>
 
 

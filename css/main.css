@@ -1,93 +1,52 @@
 @CHARSET "UTF-8";
+  /* Override some defaults */
+      html, body {
+        background-color: #eee;
+      }
+      body {
+        padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
+      }
+      .container > footer p {
+        text-align: center; /* center align it with the container */
+      }
+      .container {
+        width: 820px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
+      }
 
-        * { margin: 0; padding: 0; }
-        body { font: 16px Helvetica, Sans-Serif; line-height: 24px; background: url(images/noise.jpg); }
-        .clear { clear: both; }
-        #page-wrap { width: 800px; margin: 40px auto 60px; }
-        #pic { float: right; margin: -30px 0 0 0; }
-        h1 { margin: 0 0 16px 0; padding: 0 0 16px 0; font-size: 42px; font-weight: bold; letter-spacing: -2px; border-bottom: 1px solid #999; }
-        h2 { font-size: 20px; margin: 0 0 6px 0; position: relative; }
-        h2 span { position: absolute; bottom: 0; right: 0; font-style: italic; font-family: Georgia, Serif; font-size: 16px; color: #999; font-weight: normal; }
-        p { margin: 0 0 16px 0; }
-        a { color: #999; text-decoration: none; border-bottom: 1px dotted #999; }
-        a:hover { border-bottom-style: solid; color: black; }
-        ul { margin: 0 0 32px 17px; }
-        #objective { width: 500px; float: left; margin-bottom: 75px}
-        #objective p { font-family: Georgia, Serif; font-style: italic; color: #666; }
-        dt { font-style: italic; font-weight: bold; font-size: 18px; text-align: right; padding: 0 26px 0 0; 
-        			width: 150px; float: left; height: 100px; border-right: 1px solid #999;  }
-        dd { width: 600px; float: right; }
-        dd.clear { float: none; margin: 0; height: 15px; }
+      /* The white background content wrapper */
+      .container > .content {
+        background-color: #fff;
+        padding: 20px;
+        margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+        -webkit-border-radius: 0 0 6px 6px;
+           -moz-border-radius: 0 0 6px 6px;
+                border-radius: 0 0 6px 6px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+                box-shadow: 0 1px 2px rgba(0,0,0,.15);
+      }
 
-		
-		h1 { font-size:x-large;}
+      /* Page header tweaks */
+      .page-header {
+        background-color: #f5f5f5;
+        padding: 20px 20px 10px;
+        margin: -20px -20px 20px;
+      }
 
+      /* Styles you shouldn't keep as they are for displaying this base example only */
+      .content .span10,
+      .content .span4 {
+        min-height: 500px;
+      }
+      /* Give a quick and non-cross-browser friendly divider */
+      .content .span4 {
+        margin-left: 0;
+        padding-left: 19px;
+        border-left: 1px solid #eee;
+      }
 
-
-/* TAGS */
-     	.tags {
-				margin:0;
-				padding:0;
-				position:relative;
-				right:24px;
-				bottom:-12px;
-				list-style:none;
-				margin-left:18px;
-				margin-bottom:50px;
-			}
-     	
-     	.tags li, .tags a{
-				float:left;
-				height:24px;
-				line-height:24px;
-				position:relative;
-				font-size:11px;
-				margin-bottom:7px;
-		}
-     	
-     	.tags a{
-				margin-left:20px;
-				padding:0 10px 0 12px;
-				background:#0089e0;
-				color:#fff;
-				text-decoration:none;
-				-moz-border-radius-bottomright:4px;
-				-webkit-border-bottom-right-radius:4px;	
-				border-bottom-right-radius:4px;
-				-moz-border-radius-topright:4px;
-				-webkit-border-top-right-radius:4px;	
-				border-top-right-radius:4px;				
-		}
-		
-		.tags a:before{
-				content:"";
-				float:left;
-				position:absolute;
-				top:0;
-				left:-12px;
-				width:0;
-				height:0;
-				border-color:transparent #0089e0 transparent transparent;
-				border-style:solid;
-				border-width:12px 12px 12px 0;		
-		}
-		
-		
-		.tags a:after{
-				content:"";
-				position:absolute;
-				top:10px;
-				left:0;
-				float:left;
-				width:4px;
-				height:4px;
-				-moz-border-radius:2px;
-				-webkit-border-radius:2px;
-				border-radius:2px;
-				background:#fff;
-				-moz-box-shadow:-1px -1px 2px #004977;
-				-webkit-box-shadow:-1px -1px 2px #004977;
-				box-shadow:-1px -1px 2px #004977;
-		}		
-		.tags a:hover{background:#555;}	
-		.tags a:hover:before{border-color:transparent #555 transparent transparent;}		         
+      .topbar .btn {
+        border: 0;
+      }
+      
+      .social_links tbody td { padding: 10px 10px 10px 15px ; border: none;}

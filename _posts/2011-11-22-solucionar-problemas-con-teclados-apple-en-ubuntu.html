@@ -15,19 +15,19 @@ categories:
 - gnu-linux
 ---
 Todos los problemas de re asignación de teclas se pueden solucionar creando un fichero .Xmodmap en nuestra carpeta home con la configuración deseada.
-[cc lang="bash"]touch ~/.Xmodmap[/cc]<br>
+<pre class="sh">touch ~/.Xmodmap</pre><br>
 ahora vamos a ver problemas específicos con teclados apple macbook  y teclados apple usb externos como el aluminium.
 <h3>Problema 1: Teclas<em> &gt; &lt; </em> y <em> ª ° \</em></h3><br>
 Solución: editar fichero .Xmodmap con esta líneas.
-[cc lang="bash"]
+<pre class="sh">
 keycode 49 = less greater less greater bar brokenbar bar 
 keycode 94 = U000AA degree U000AA degree backslash backslash backslash
-[/cc]
+</pre>
 Ojo, en otros lugares (como la wiki de ubuntu) verás esta otra configuración que es errónea para teclados españoles.
-[cc lang="bash"]
+<pre class="sh">
 keycode 49 = less greater less greater bar brokenbar bar
 keycode 94 = dead_circumflex degree dead_circumflex degree U2032 U2033 U2032
-[/cc]
+</pre>
 <b>Edit: </b>He actualizado la ayuda de Ubuntu con esta corrección.<a href="https://help.ubuntu.com/community/AppleKeyboard">Help Ubuntu community</a>
 (inglés)<br>
 Para que los cambios tengan efecto tienes que cerrar sesión de usuario y volver a entrar.
@@ -40,5 +40,5 @@ El caso es que no te escribe ninguna letra y pulsando sobre las letras solo escr
 <em>Cuando encuentre una solución permanente editaré el post</em>
 
 <BR>
-Fuentes (errónea):
+Fuente:
 <a href="https://help.ubuntu.com/community/AppleKeyboard">Help Ubuntu community</a>

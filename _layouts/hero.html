@@ -13,6 +13,8 @@
 
     <!-- Le styles -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/cv.css" rel="stylesheet">
+    
     <style type="text/css">
       /* Override some defaults */
       html, body {
@@ -48,11 +50,7 @@
         margin: -20px -20px 20px;
       }
 
-      /* Styles you shouldn't keep as they are for displaying this base example only */
-      .content .span10,
-      .content .span4 {
-        min-height: 500px;
-      }
+   
       /* Give a quick and non-cross-browser friendly divider */
       .content .span4 {
         margin-left: 0;
@@ -63,6 +61,9 @@
       .topbar .btn {
         border: 0;
       }
+      
+      .social_links tbody td { padding: 10px 10px 10px 15px ; border: none;}
+      
 
     </style>
 
@@ -71,6 +72,21 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    			
+	<script src="./files/quant.js" async="" type="text/javascript"></script><script type="text/javascript" async="" src="./files/ga.js"></script>
+	<script type="text/javascript">//<![CDATA[
+	// Google Analytics for WordPress by Yoast v4.2.2 | http://yoast.com/wordpress/google-analytics/
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount','UA-27382263-1']);
+	_gaq.push(['_trackPageview'],['_trackPageLoadTime']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	//]]>
+	</script>
+    
   </head>
 
   <body>
@@ -78,19 +94,13 @@
     <div class="topbar">
       <div class="fill">
         <div class="container">
-          <a class="brand" href="#">Alfonso F. Abad</a>
+    	      <a class="brand" href="#">Alfonso Fdez. Abad</a>
           <ul class="nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/resume">Resume</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul> 
-<!-- 
-          <form action="" class="pull-right">
-            <input class="input-small" type="text" placeholder="Username">
-            <input class="input-small" type="password" placeholder="Password">
-            <button class="btn" type="submit">Sign in</button>            
-          </form>
-           -->
+
         </div>
       </div>
     </div>
@@ -104,56 +114,18 @@
         </div>
          -->
         <div class="row">
-          <div class="span10">
-            <h2>Anotaciones y apuntes</h2>
-            <!-- Blog title -->
+          <div class="span16">            
+            {{ title }}<!-- Blog title -->
 					
 			
-				
+			{{ foo }}	
 			<!-- content -->
 			<div id="content">
-				<a href="/">home</a><br>
-<h2>Colorear sintaxis del código en Eclipse</h2>
-    
-Para tener el código coloreado y poder cambiar entre varios temas,
-Una formas de hacerlo es instalando <!--more--><a href="http://www.eclipsecolorthemes.org/?view=plugin">Eclipse color theme</a>
-<br>
-
-Se puede instalar desde  el menu Help->Install new software 
-Agregando la url : <code lang="bash">http://eclipse-color-theme.github.com/update</code> y siguiendo con el proceso normal.
-<br>
-Una vez instalado para cambiar entre los diferentes temas hay que ir a el menu
-<code lang="bash">Window > Preferences > General > Aparence > Color theme</code>
-<br>
-<a href="http://alfonsofernandez.net/wp-content/uploads/2011/12/post_eclipse.png"><img src="http://alfonsofernandez.net/wp-content/uploads/2011/12/post_eclipse-300x210.png" alt="" title="Cambiar tema de eclipse color plugin" width="300" height="210" class="aligncenter size-medium wp-image-130" /></a>
-
-
-
-
-<br>
-<br>
-<div id="disqus_thread"></div>
-
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'alfonsofernndez'; // required: replace example with your forum shortname
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-	
+				{{ content }}	
 			</div>
 					
           </div>
-          <div class="span4">
-            <h3>Categorias</h3>
-          </div>
+        
         </div>
       </div>
 

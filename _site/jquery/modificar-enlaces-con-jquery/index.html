@@ -10,67 +10,42 @@
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
+    
     <!-- Le styles -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <style type="text/css">
-      /* Override some defaults */
-      html, body {
-        background-color: #eee;
-      }
-      body {
-        padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
-      }
-      .container > footer p {
-        text-align: center; /* center align it with the container */
-      }
-      .container {
-        width: 820px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
-      }
-
-      /* The white background content wrapper */
-      .container > .content {
-        background-color: #fff;
-        padding: 20px;
-        margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
-        -webkit-border-radius: 0 0 6px 6px;
-           -moz-border-radius: 0 0 6px 6px;
-                border-radius: 0 0 6px 6px;
-        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-                box-shadow: 0 1px 2px rgba(0,0,0,.15);
-      }
-
-      /* Page header tweaks */
-      .page-header {
-        background-color: #f5f5f5;
-        padding: 20px 20px 10px;
-        margin: -20px -20px 20px;
-      }
-
-      /* Styles you shouldn't keep as they are for displaying this base example only */
-      .content .span10,
-      .content .span4 {
-        min-height: 500px;
-      }
-      /* Give a quick and non-cross-browser friendly divider */
-      .content .span4 {
-        margin-left: 0;
-        padding-left: 19px;
-        border-left: 1px solid #eee;
-      }
-
-      .topbar .btn {
-        border: 0;
-      }
-
-    </style>
-
+    <link href="/css/hl.snipet.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet"> 
+    
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    			
+	<script src="./files/quant.js" async="" type="text/javascript"></script><script type="text/javascript" async="" src="./files/ga.js"></script>
+	<script type="text/javascript">//<![CDATA[
+	// Google Analytics for WordPress by Yoast v4.2.2 | http://yoast.com/wordpress/google-analytics/
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount','UA-27382263-1']);
+	_gaq.push(['_trackPageview'],['_trackPageLoadTime']);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	//]]>
+	</script>
+	
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="http://www.steamdev.com/snippet/js/jquery.snippet.min.js"></script>
+    <script type="text/javascript" src="/js/snippet/sh_sh.min.js"></script>
+	<script>
+	$(document).ready(function(){	$("pre.javascript").snippet("javascript",{style:"whatis"}); });
+	$(document).ready(function(){	$("pre.sh").snippet("sh",{style:"whatis"}); });
+	$(document).ready(function(){	$("pre.php").snippet("php",{style:"whatis"}); });
+	
+
+	</script>
   </head>
 
   <body>
@@ -78,25 +53,16 @@
     <div class="topbar">
       <div class="fill">
         <div class="container">
-          <a class="brand" href="#">Alfonso F. Abad</a>
+    	      <a class="brand" href="#">Alfonso Fdez. Abad</a>
           <ul class="nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li class="active"><a href="/">Blog</a></li>
+            <li><a href="/resume.html">Resume</a></li>            
           </ul> 
-<!-- 
-          <form action="" class="pull-right">
-            <input class="input-small" type="text" placeholder="Username">
-            <input class="input-small" type="password" placeholder="Password">
-            <button class="btn" type="submit">Sign in</button>            
-          </form>
-           -->
         </div>
       </div>
     </div>
 
     <div class="container">
-
       <div class="content">
         <!-- 
         <div class="page-header">
@@ -104,38 +70,40 @@
         </div>
          -->
         <div class="row">
-          <div class="span10">
-            <h2>Anotaciones y apuntes</h2>
-            <!-- Blog title -->
-					
-			
-				
+          <div class="span10">            
+            <!--  Blog title -->									
 			<!-- content -->
 			<div id="content">
 				<a href="/">home</a><br>
 <h2>Modificar enlaces con jQuery</h2>
     
-<div>
-Modificar el destino de los enlaces con jQuery.
+<div>Modificar el destino de los enlaces con jQuery.
 Código para cambiar el atributo href de una lista de links<!--more-->:
-<div class="highlight"><pre><code class="javascript"><span class="c1">// a.modificables es el elector</span>
-<span class="c1">// en este caso selecciona todos los enlaces con la clase modificable</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;a.modificables&quot;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span>  <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>  
-<span class="c1">// a .each le pasamos la función como parametro </span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="s2">&quot;javascript:alert(&#39;&quot;</span><span class="o">+</span><span class="k">this</span><span class="p">.</span><span class="nx">href</span><span class="o">+</span><span class="s2">&quot;&#39;)&quot;</span><span class="p">;</span> 
-     <span class="c1">// this.href es el atributo href de cada enlace </span>
-    <span class="c1">// de los que abarca el selector</span>
-   <span class="p">}</span><span class="c1">// fin de la función</span>
-<span class="p">);</span> <span class="c1">// fin de .each</span>
-</code></pre>
-</div>
+<pre class="javascript">
+// a.modificables es el elector
+// en este caso selecciona todos los enlaces con la clase modificable
+$("a.modificables").each(  function() {  
+// a .each le pasamos la función como parametro 
+      this.href = "javascript:alert('"+this.href+"')"; 
+     // this.href es el atributo href de cada enlace 
+    // de los que abarca el selector
+   }// fin de la función
+); // fin de .each
+</pre>
 
+<br>
 
+<pre class="sh">
+	sudo apt-get install 
+</pre>
+
+<pre class="php">
+	echo "Hola mundo";
+</pre>
 </div>
 <em>En este ejemplo se cambia el destino por un pequeño javascript que saca por un alert el destino de cada link</em>
 <br>
-Fuente: <a href="http://stackoverflow.com/questions/179713/how-to-change-the-href-for-a-hyperlink-using-jquery">stackoverflow</a>
-
+Fuente: <a href="http://stackoverflow.com/questions/179713/how-to-change-the-href-for-a-hyperlink-using-jquery">stackoverflow</a>	
 
 
 
@@ -157,11 +125,90 @@ Fuente: <a href="http://stackoverflow.com/questions/179713/how-to-change-the-hre
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 	
-			</div>
-					
+			</div>					
           </div>
           <div class="span4">
-            <h3>Categorias</h3>
+			
+			<div>
+				<table>
+					<tr>
+						<td>
+							<img src="/images/alfons.png" width="90	px">
+						</td>
+						<td style="padding-left:0px;">
+							Alfonso Fernández Abad<br>
+							<em>Web Developer</em><br>
+							<a href="mailto:fernandez.alfonso@gmial.com">e-mail</a>
+							 
+						</td>
+					</tr>
+				</table>
+				
+ 			</div>
+			<div style="clear:both;">&nbsp;</div>
+            
+            <table class="social_links" width="100%" cellpadding="0" cellspacing="0" border="0">
+  			<tbody>
+  				<tr>
+				    <td valign="middle"   >
+				      <a href="http://www.twitter.com/alfonsabad" style="text-decoration:none;">
+				        <img alt="" height="48" src="/images/twitter.png" style="display:block; border: none;" width="48">
+				      </a>
+				    </td>
+
+				    <td valign="middle" width="100%"  >
+				      <a href="http://www.twitter.com/alfonsabad" style="font-size: 15px; font-weight: bold; color: #333; text-decoration: none;">Twitter<br>
+				        <span style="font-size: 13px; font-weight: normal; color: #999;">@alfonsabad</span>
+				      </a>
+				    </td>
+				</tr>
+				<tr>
+					<!-- USUario github -->
+						<td valign="middle" class="tdsocial" >
+							<a href=" " style="text-decoration:none;">
+					        	<img alt="" height="48" src="/images/github.png" style="display:block; border: none;" width="48">
+					      		</a>
+					    	</td>
+
+						<td valign="middle" width="100%" class="tdsocial" >
+						<a href=" " style="font-size: 15px; font-weight: bold; color: #333; text-decoration: none;">Github<br>
+						     	<span style="font-size: 13px; font-weight: normal; color: #999;">@alfonsofernandez</span>
+						   		</a>
+						 	</td>
+					<!--/end usuario github -->
+				</tr>
+				<tr>
+					<!-- usuario google plus -->
+					<td valign="middle" class="tdsocial" >
+							<a href="https://plus.google.com/115601102326911748945" style="text-decoration:none;">
+					        	<img alt="" height="48" src="/images/google.png" style="display:block; border: none;" width="48">
+					      		</a>
+					    	</td>
+					
+						<td valign="middle" width="100%" class="tdsocial" >
+							<a href="http://plus.google.com/115601102326911748945" style="font-size: 15px; font-weight: bold; color: #333; text-decoration: none;">Google+<br>
+					        	<span style="font-size: 13px; font-weight: normal; color: #999;">Alfonso</span>
+					      		</a>
+					    	</td>
+					<!-- /end usuario google plus -->
+				</tr>
+				<tr>
+				<!-- usuario Linked in -->
+					<td valign="middle" class="tdsocial" >
+							<a href=" " style="text-decoration:none;">
+					        	<img alt="" height="48" src="/images/linkedin-logo.png" style="display:block; border: none;" width="48">
+					      		</a>
+					    	</td>
+					
+						<td valign="middle" width="100%" class="tdsocial" >
+							<a href=" " style="font-size: 15px; font-weight: bold; color: #333; text-decoration: none;">Linked In<br>
+					        	<span style="font-size: 13px; font-weight: normal; color: #999;">Alfonso</span>
+					      		</a>
+					    	</td>
+					<!-- /end Linked in  -->
+			  </tr>
+			</tbody></table>
+            
           </div>
         </div>
       </div>
