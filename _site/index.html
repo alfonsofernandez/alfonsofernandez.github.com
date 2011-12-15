@@ -2,74 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <title>Alfonso Fernández personal site.</title>
+    <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+    <META HTTP-EQUIV="EXPIRES" CONTENT="0">
+    <meta name="description" content="Programmer">
+    <meta name="author" content="Alfonso Fernández Abad">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
+    <![endif]-->    
     <!-- Le styles -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-     
-    <style type="text/css">
-      /* Override some defaults */
-      html, body {
-        background-color: #eee;
-      }
-      body {
-        padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
-      }
-      .container > footer p {
-        text-align: center; /* center align it with the container */
-      }
-      .container {
-        width: 820px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
-      }
-
-      /* The white background content wrapper */
-      .container > .content {
-        background-color: #fff;
-        padding: 20px;
-        margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
-        -webkit-border-radius: 0 0 6px 6px;
-           -moz-border-radius: 0 0 6px 6px;
-                border-radius: 0 0 6px 6px;
-        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
-                box-shadow: 0 1px 2px rgba(0,0,0,.15);
-      }
-
-      /* Page header tweaks */
-      .page-header {
-        background-color: #f5f5f5;
-        padding: 20px 20px 10px;
-        margin: -20px -20px 20px;
-      }
-
-      /* Styles you shouldn't keep as they are for displaying this base example only */
-      .content .span10,
-      .content .span4 {
-        min-height: 500px;
-      }
-      /* Give a quick and non-cross-browser friendly divider */
-      .content .span4 {
-        margin-left: 0;
-        padding-left: 19px;
-        border-left: 1px solid #eee;
-      }
-
-      .topbar .btn {
-        border: 0;
-      }
-      
-      .social_links tbody td { padding: 10px 10px 10px 15px ; border: none;}
-      
-
-    </style>
-
+    <link href="/css/hl.snipet.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet"> 
+    
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -89,7 +37,17 @@
 	})();
 	//]]>
 	</script>
-    
+	
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="http://www.steamdev.com/snippet/js/jquery.snippet.min.js"></script>
+    <script type="text/javascript" src="/js/snippet/sh_sh.min.js"></script>
+	<script>
+	$(document).ready(function(){	$("pre.javascript").snippet("javascript",{style:"whatis",menu:false}); });
+	$(document).ready(function(){	$("pre.sh").snippet("sh",{style:"whatis",menu:false, showNum:false}); });
+	$(document).ready(function(){	$("pre.php").snippet("php",{style:"whatis",menu:false}); });
+	
+
+	</script>
   </head>
 
   <body>
@@ -97,19 +55,21 @@
     <div class="topbar">
       <div class="fill">
         <div class="container">
-    	      <a class="brand" href="#">Alfonso Fdez. Abad</a>
+    	      <a class="brand" href="/">Alfonso Fdez. Abad</a>
           <ul class="nav">
-            <li class="active"><a href="/">Home</a></li>
-            <li><a href="/resume.html">Resume</a></li>
-            <li><a href="/blog">Blog</a></li>
-          </ul> 
-
-        </div>
-      </div>
+            <li class="active"><a href="/">Blog</a></li>
+            <li><a href="/resume">Resume</a></li>            
+          </ul>
+          <!-- 
+          <div class="pull-right">
+            <a href="/atom.xml"><img src="/images/rss.png" alt="Rss blog alfonso"></a>
+          </div>
+          -->
+        </div>        
+      </div>                         
     </div>
 
     <div class="container">
-
       <div class="content">
         <!-- 
         <div class="page-header">
@@ -117,45 +77,118 @@
         </div>
          -->
         <div class="row">
-          <div class="span10">            
+          <div class="span12">            
             <!--  Blog title -->									
 			<!-- content -->
 			<div id="content">
-				    <h2 style="padding-left:10px">Entradas:</h2>
+				<h3>Last entries:</h3>
+    
+    	<div class="post" >    
+    		<h2><a href="/gnu-linux/instalar-g-y-ncurses-en-gnulinux-debian-y-ubuntu">Instalar g++ y ncurses en gnu/linux Debian y Ubuntu</a></h2>
+    		<p>Con Ubuntu 11.10 no viene por defecto ni <b>g++</b> ni <b>ncurses</b> así que para instalarlos desde el terminal : 
+<pre class="sh">
+sudo apt-get install g++
+sudo apt-get install libncurses5-dev
+</pre>
 
-    <div id="post_links">
-    	<ul>
-    	
-    		<li>
-     			<a href="/gnu-linux/Instalar-multiples-versiones-de-ruby">Colorear sintaxis del código en Eclipse</a>
-    			</li>
-    		
-    		<li>
-     			<a href="/gnu-linux/instalar-g-y-ncurses-en-gnulinux-debian-y-ubuntu">Instalar g++ y ncurses en gnu/linux Debian y Ubuntu</a>
-    			</li>
-    		
-    		<li>
-     			<a href="/jquery/modificar-enlaces-con-jquery">Modificar enlaces con jQuery</a>
-    			</li>
-    		
-    		<li>
-     			<a href="/gnu-linux/comandos-basicos-git">Comandos básicos Git</a>
-    			</li>
-    		
-    		<li>
-     			<a href="/gnu-linux/colorear-sintaxis-del-codigo-en-eclipse">Colorear sintaxis del código en Eclipse</a>
-    			</li>
-    		
-    		<li>
-     			<a href="/wordpress/plugin-wordpress-para-colorear-sintaxis-codigo-fuente-en-tus-posts">Plugin wordpress para colorear sintaxis código fuente en tus posts</a>
-    			</li>
-    		
-    		<li>
-     			<a href="/gnu-linux/solucionar-problemas-con-teclados-apple-en-ubuntu">Problemas con teclados Apple Macbook con GNU/Linux (Ubuntu) (teclas < > )</a>
-    			</li>
-    		
-    	</ul>
-    </div>
+Si solo necesitas ncurses
+<pre class="sh">
+	sudo apt-get install build-essentials # este puede que ya lo tengas 
+	sudo apt-get install libncurses5-dev
+</pre>
+
+<b>Fuente:</b> <a href="http://ubuntuforums.org/showthread.php?t=296224">Ubuntu forums</a>
+</p>    	
+    	</div>
+	
+    	<div class="post" >    
+    		<h2><a href="/jquery/modificar-enlaces-con-jquery">Modificar enlaces con jQuery</a></h2>
+    		<p><div>Modificar el destino de los enlaces con jQuery.
+Código para cambiar el atributo href de una lista de links<!--more-->:
+<pre class="javascript">
+// a.modificables es el elector
+// en este caso selecciona todos los enlaces con la clase modificable
+$("a.modificables").each(  function() {  
+// a .each le pasamos la función como parametro 
+      this.href = "javascript:alert('"+this.href+"')"; 
+     // this.href es el atributo href de cada enlace 
+    // de los que abarca el selector
+   }// fin de la función
+); // fin de .each
+</pre>
+
+<br>
+
+</div>
+<em>En este ejemplo se cambia el destino por un pequeño javascript que saca por un alert el destino de cada link</em>
+<br>
+Fuente: <a href="http://stackoverflow.com/questions/179713/how-to-change-the-href-for-a-hyperlink-using-jquery">stackoverflow</a>	</p>    	
+    	</div>
+	
+    	<div class="post" >    
+    		<h2><a href="/gnu-linux/comandos-basicos-git">Comandos básicos Git</a></h2>
+    		<p><style>  em { font-size: small; margin-bottom:50px }</style>
+Listado de los comandos más utilizados en el día a día trabajando con git <!--more-->, puedes  <a href="javascript:jQuery('em').toggle();">ocultar o mostrar explcaciones</a> si ya conoces lo que hace cada uno.
+<h4>Iniciar un repositorio</h4>
+<pre class="sh">git init mirepo.git</pre>
+<em>Crea una carpeta en el directorio actual con el nombre mirepo.git con un subdirectorio oculto llamado .git/ donde están todos los ficheros del repositorio.</em>
+<h4>Añadir todo a el stagging area.</h4>
+<pre class="sh">git add .</pre>
+<em>Añade todos los archivos modificados o nuevo a el stagging area, todo archivo en stagging area formará parte del siguiente commit</em>
+<h4>Agregar un fichero indivdual al stagging area.</h4>
+<pre class="sh">git add nombre_de_fichero.txt</pre>
+<h4>Agregar ficheros modificados y hacer Commit con comentario</h4>
+<pre class="sh">git commit -a -m "nuestro comentario sobre el commit"</pre>
+<em>El parametro -a indica que se ejecute el comando git add previamente, así no hay que hacerlo en 2 pasos, pero no agregará ficheros untracked, es decir agregará y hará commit de los ficheros modificados que existían previamente en el anterior commit. Si tenemos ficheros nuevos tendremos que hacer 2 pasos, git add y git commit</em>
+<h4>Git status , conocer el estado de nuestro repositorio.</h4>
+<pre class="sh">git status</pre>
+<em>Nos indica cuantos commits por delante o por detrás vamos de la rama principal de desarrollo, además indica que ficheros se han modificado y cuales estan untracked ( ficheros nuevos ), Muy útil para ver lo modificado y decidir que agregaremos en el siguiente commit y que cambios echaremos para atrás</em>
+<h4>Git log , mostrar el log local de nuestro repositorio.</h4>
+<pre class="sh">git log</pre>
+<em>Si el log es largo se mostrará através del comando <strong>more</strong>, para movernos por el log, usamos <strong>f</strong> (forward) para ir hacia adelante <strong>b</strong> (backwards) para ir hacia atrás y <strong>q</strong> (quit) para salir del log</em>
+
+
+
+
+Fuentes: <a href="http://gitready.com/">Git ready</a> - <a href="http://gitref.org/">Git ref</a>
+</p>    	
+    	</div>
+	
+    	<div class="post" >    
+    		<h2><a href="/gnu-linux/solucionar-problemas-con-teclados-apple-en-ubuntu">Problemas con teclados Apple Macbook con GNU/Linux (Ubuntu) (teclas < > )</a></h2>
+    		<p>Todos los problemas de re asignación de teclas se pueden solucionar creando un fichero .Xmodmap en nuestra carpeta home con la configuración deseada.
+<pre class="sh">touch ~/.Xmodmap</pre><br>
+ahora vamos a ver problemas específicos con teclados apple macbook  y teclados apple usb externos como el aluminium.
+<h3>Problema 1: Teclas<em> &gt; &lt; </em> y <em> ª ° \</em></h3><br>
+Solución: editar fichero .Xmodmap con esta líneas.
+<pre class="sh">
+keycode 49 = less greater less greater bar brokenbar bar 
+keycode 94 = U000AA degree U000AA degree backslash backslash backslash
+</pre>
+Ojo, en otros lugares (como la wiki de ubuntu) verás esta otra configuración que es errónea para teclados españoles.
+<pre class="sh">
+keycode 49 = less greater less greater bar brokenbar bar
+keycode 94 = dead_circumflex degree dead_circumflex degree U2032 U2033 U2032
+</pre>
+<b>Edit: </b>He actualizado la ayuda de Ubuntu con esta corrección.<a href="https://help.ubuntu.com/community/AppleKeyboard">Help Ubuntu community</a>
+(inglés)<br>
+Para que los cambios tengan efecto tienes que cerrar sesión de usuario y volver a entrar.
+Además si conectas un teclado externo usb con la sesión iniciada no se le aplicarán los cambios, tendrás que cerrar sesión e inciarla de nuevo con el teclado conectado.
+
+<h3>Problema 2: Teclado se convierte en teclado numérico</h3>
+Algunas veces (aún no he detectado cuando pasa exactamente) el teclado se convierte en teclado numérico, es el mismo efecto que el modo especial que tienen algunos teclados sin teclado numéricos que se suele activar con un tecla especial o tecla función.
+El caso es que no te escribe ninguna letra y pulsando sobre las letras solo escribe números.
+<b>Solución:</b> Pulsa tecla fn+F6 para volver a la normalidad.
+<em>Cuando encuentre una solución permanente editaré el post</em>
+
+<BR>
+Fuente:
+<a href="https://help.ubuntu.com/community/AppleKeyboard">Help Ubuntu community</a>
+</p>    	
+    	</div>
+	
+    
+    
      	
 			</div>					
           </div>
@@ -165,12 +198,13 @@
 				<table>
 					<tr>
 						<td>
-							<img src="/images/alfons.png" width="90	px">
+							<img src="/images/alfons2.png" width="90px">
 						</td>
 						<td style="padding-left:0px;">
 							Alfonso Fernández Abad<br>
 							<em>Web Developer</em><br>
-							<a href="mailto:fernandez.alfonso@gmial.com"</a>
+							<a href="mailto:fernandez.alfonso@gmail.com">e-mail</a><br>
+							<a href="/resume">about me</a>
 							 
 						</td>
 					</tr>
@@ -181,66 +215,67 @@
             
             <table class="social_links" width="100%" cellpadding="0" cellspacing="0" border="0">
   			<tbody>
-  				<tr>
-				    <td valign="middle"   >
-				      <a href="http://www.twitter.com/alfonsabad" style="text-decoration:none;">
-				        <img alt="" height="48" src="/images/twitter.png" style="display:block; border: none;" width="48">
-				      </a>
-				    </td>
-
-				    <td valign="middle" width="100%"  >
-				      <a href="http://www.twitter.com/alfonsabad" style="font-size: 15px; font-weight: bold; color: #333; text-decoration: none;">Twitter<br>
-				        <span style="font-size: 13px; font-weight: normal; color: #999;">@alfonsabad</span>
-				      </a>
-				    </td>
-				</tr>
-				<tr>
-					<!-- USUario github -->
+	  				<tr>
+					    <td valign="middle"   >
+					      <a href="http://www.twitter.com/alfonsabad" style="text-decoration:none;">
+					        <img alt="" height="48" src="/images/twitter.png" style="display:block; border: none;" width="48">
+					      </a>
+					    </td>
+	
+					    <td valign="middle" width="100%"  >
+					      <a href="http://www.twitter.com/alfonsabad" style="font-size: 15px; font-weight: bold; color: #333; text-decoration: none;">Twitter<br>
+					        <span style="font-size: 13px; font-weight: normal; color: #999;">@alfonsabad</span>
+					      </a>
+					    </td>
+					</tr>
+					<tr>
+						<!-- USUario github -->
+							<td valign="middle" class="tdsocial" >
+								<a href="http://github.com/alfonsofernandez" style="text-decoration:none;">
+						        	<img alt="http://github.com/alfonsofernandez" height="48" src="/images/github2.png" style="display:block; border: none;" width="48">
+						      		</a>
+						    	</td>
+	
+							<td valign="middle" width="100%" class="tdsocial" >
+									<a href="http://github.com/alfonsofernandez" style="font-size: 15px; font-weight: bold; color: #333; text-decoration: none;">Github<br>
+								     	<span style="font-size: 13px; font-weight: normal; color: #999;">@alfonsofernandez</span>
+							   		</a><br>
+							   		whatch my repos! 
+							</td>
+						<!--/end usuario github -->
+					</tr>
+					<tr>
+						<!-- usuario google plus -->
 						<td valign="middle" class="tdsocial" >
-							<a href=" " style="text-decoration:none;">
-					        	<img alt="" height="48" src="/images/github.png" style="display:block; border: none;" width="48">
-					      		</a>
-					    	</td>
-
-						<td valign="middle" width="100%" class="tdsocial" >
-						<a href=" " style="font-size: 15px; font-weight: bold; color: #333; text-decoration: none;">Github<br>
-						     	<span style="font-size: 13px; font-weight: normal; color: #999;">@alfonsofernandez</span>
-						   		</a>
-						 	</td>
-					<!--/end usuario github -->
-				</tr>
-				<tr>
-					<!-- usuario google plus -->
-					<td valign="middle" class="tdsocial" >
 							<a href="https://plus.google.com/115601102326911748945" style="text-decoration:none;">
-					        	<img alt="" height="48" src="/images/google.png" style="display:block; border: none;" width="48">
-					      		</a>
-					    	</td>
+					        	<img alt="" height="48" src="/images/google2.png" style="display:block; border: none;" width="48">
+					    	</a>
+					    </td>
 					
 						<td valign="middle" width="100%" class="tdsocial" >
 							<a href="http://plus.google.com/115601102326911748945" style="font-size: 15px; font-weight: bold; color: #333; text-decoration: none;">Google+<br>
 					        	<span style="font-size: 13px; font-weight: normal; color: #999;">Alfonso</span>
 					      		</a>
-					    	</td>
-					<!-- /end usuario google plus -->
-				</tr>
-				<tr>
-				<!-- usuario Linked in -->
-					<td valign="middle" class="tdsocial" >
-							<a href=" " style="text-decoration:none;">
-					        	<img alt="" height="48" src="/images/linkedin-logo.png" style="display:block; border: none;" width="48">
-					      		</a>
-					    	</td>
+					    </td>
+						<!-- /end usuario google plus -->
+					</tr>
+					<tr>
+					<!-- usuario Linked in -->
+						<td valign="middle" class="tdsocial" >
+							<a href="http://www.linkedin.com/pub/alfonso-fernandez/7/5b2/774" style="text-decoration:none;">
+					        	<img alt="" height="48" src="/images/linkedin-logo2.png" style="display:block; border: none;" width="48">
+					    	</a>
+					    </td>
 					
 						<td valign="middle" width="100%" class="tdsocial" >
-							<a href=" " style="font-size: 15px; font-weight: bold; color: #333; text-decoration: none;">Linked In<br>
+							<a href="http://www.linkedin.com/pub/alfonso-fernandez/7/5b2/774" style="font-size: 15px; font-weight: bold; color: #333; text-decoration: none;">Linked In<br>
 					        	<span style="font-size: 13px; font-weight: normal; color: #999;">Alfonso</span>
 					      		</a>
-					    	</td>
-					<!-- /end Linked in  -->
-			  </tr>
-			</tbody></table>
-            
+					    </td>
+						<!-- /end Linked in  -->
+					</tr>
+				</tbody>
+			</table>            
           </div>
         </div>
       </div>
