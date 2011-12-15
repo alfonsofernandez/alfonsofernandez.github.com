@@ -10,8 +10,8 @@
         text-align: center; /* center align it with the container */
       }
       
-      div.brief p { font-size: medium;}
-      
+            
+	  div.brief p { font-size: medium; padding-top:20px;}
 
       /* The white background content wrapper */
       .container > .content {
@@ -51,7 +51,8 @@
       
       .social_links tbody td { padding: 10px 10px 10px 15px ; border: none;}
     
-    	.invert{ background-color:rgba(0,89,224,0.5); color:white;}
+   		.invert{ background-color:rgba(0,0,0,0.9); color:#FFF;}
+      	    	 
     	span.invert{font-size: x-large;line-height:110%;margin-bottom:2px}
     /* This is a fix */
       pre {
