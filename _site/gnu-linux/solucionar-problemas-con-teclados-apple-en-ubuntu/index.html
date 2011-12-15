@@ -2,22 +2,74 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Alfonso Fernández personal site.</title>
-    <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
-    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
-    <META HTTP-EQUIV="EXPIRES" CONTENT="0">
-    <meta name="description" content="Programmer">
-    <meta name="author" content="Alfonso Fernández Abad">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->    
+    <![endif]-->
+
     <!-- Le styles -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/hl.snipet.css" rel="stylesheet">
-    <link href="/css/main.css" rel="stylesheet"> 
-    
+     
+    <style type="text/css">
+      /* Override some defaults */
+      html, body {
+        background-color: #eee;
+      }
+      body {
+        padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
+      }
+      .container > footer p {
+        text-align: center; /* center align it with the container */
+      }
+      .container {
+        width: 820px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
+      }
+
+      /* The white background content wrapper */
+      .container > .content {
+        background-color: #fff;
+        padding: 20px;
+        margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+        -webkit-border-radius: 0 0 6px 6px;
+           -moz-border-radius: 0 0 6px 6px;
+                border-radius: 0 0 6px 6px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+                box-shadow: 0 1px 2px rgba(0,0,0,.15);
+      }
+
+      /* Page header tweaks */
+      .page-header {
+        background-color: #f5f5f5;
+        padding: 20px 20px 10px;
+        margin: -20px -20px 20px;
+      }
+
+      /* Styles you shouldn't keep as they are for displaying this base example only */
+      .content .span10,
+      .content .span4 {
+        min-height: 500px;
+      }
+      /* Give a quick and non-cross-browser friendly divider */
+      .content .span4 {
+        margin-left: 0;
+        padding-left: 19px;
+        border-left: 1px solid #eee;
+      }
+
+      .topbar .btn {
+        border: 0;
+      }
+      
+      .social_links tbody td { padding: 10px 10px 10px 15px ; border: none;}
+      
+
+    </style>
+
     <!-- Le fav and touch icons -->
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -37,17 +89,7 @@
 	})();
 	//]]>
 	</script>
-	
-    <script type="text/javascript" src="/js/jquery.js"></script>
-    <script type="text/javascript" src="http://www.steamdev.com/snippet/js/jquery.snippet.min.js"></script>
-    <script type="text/javascript" src="/js/snippet/sh_sh.min.js"></script>
-	<script>
-	$(document).ready(function(){	$("pre.javascript").snippet("javascript",{style:"whatis",menu:false}); });
-	$(document).ready(function(){	$("pre.sh").snippet("sh",{style:"whatis",menu:false, showNum:false}); });
-	$(document).ready(function(){	$("pre.php").snippet("php",{style:"whatis",menu:false}); });
-	
-
-	</script>
+    
   </head>
 
   <body>
@@ -55,21 +97,19 @@
     <div class="topbar">
       <div class="fill">
         <div class="container">
-    	      <a class="brand" href="/">Alfonso Fdez. Abad</a>
+    	      <a class="brand" href="#">Alfonso Fdez. Abad</a>
           <ul class="nav">
-            <li class="active"><a href="/">Blog</a></li>
-            <li><a href="/resume">Resume</a></li>            
-          </ul>
-          <!-- 
-          <div class="pull-right">
-            <a href="/atom.xml"><img src="/images/rss.png" alt="Rss blog alfonso"></a>
-          </div>
-          -->
-        </div>        
-      </div>                         
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/resume.html">Resume</a></li>
+            <li><a href="/blog">Blog</a></li>
+          </ul> 
+
+        </div>
+      </div>
     </div>
 
     <div class="container">
+
       <div class="content">
         <!-- 
         <div class="page-header">
@@ -77,7 +117,7 @@
         </div>
          -->
         <div class="row">
-          <div class="span12">            
+          <div class="span10">            
             <!--  Blog title -->									
 			<!-- content -->
 			<div id="content">
@@ -85,19 +125,19 @@
 <h2>Problemas con teclados Apple Macbook con GNU/Linux (Ubuntu) (teclas < > )</h2>
     
 Todos los problemas de re asignación de teclas se pueden solucionar creando un fichero .Xmodmap en nuestra carpeta home con la configuración deseada.
-<pre class="sh">touch ~/.Xmodmap</pre><br>
+[cc lang="bash"]touch ~/.Xmodmap[/cc]<br>
 ahora vamos a ver problemas específicos con teclados apple macbook  y teclados apple usb externos como el aluminium.
 <h3>Problema 1: Teclas<em> &gt; &lt; </em> y <em> ª ° \</em></h3><br>
 Solución: editar fichero .Xmodmap con esta líneas.
-<pre class="sh">
+[cc lang="bash"]
 keycode 49 = less greater less greater bar brokenbar bar 
 keycode 94 = U000AA degree U000AA degree backslash backslash backslash
-</pre>
+[/cc]
 Ojo, en otros lugares (como la wiki de ubuntu) verás esta otra configuración que es errónea para teclados españoles.
-<pre class="sh">
+[cc lang="bash"]
 keycode 49 = less greater less greater bar brokenbar bar
 keycode 94 = dead_circumflex degree dead_circumflex degree U2032 U2033 U2032
-</pre>
+[/cc]
 <b>Edit: </b>He actualizado la ayuda de Ubuntu con esta corrección.<a href="https://help.ubuntu.com/community/AppleKeyboard">Help Ubuntu community</a>
 (inglés)<br>
 Para que los cambios tengan efecto tienes que cerrar sesión de usuario y volver a entrar.
@@ -110,7 +150,7 @@ El caso es que no te escribe ninguna letra y pulsando sobre las letras solo escr
 <em>Cuando encuentre una solución permanente editaré el post</em>
 
 <BR>
-Fuente:
+Fuentes (errónea):
 <a href="https://help.ubuntu.com/community/AppleKeyboard">Help Ubuntu community</a>
 
 
@@ -142,13 +182,12 @@ Fuente:
 				<table>
 					<tr>
 						<td>
-							<img src="/images/alfons2.png" width="90px">
+							<img src="/images/alfons.png" width="90	px">
 						</td>
 						<td style="padding-left:0px;">
 							Alfonso Fernández Abad<br>
 							<em>Web Developer</em><br>
-							<a href="mailto:fernandez.alfonso@gmail.com">e-mail</a><br>
-							<a href="/resume">about me</a>
+							<a href="mailto:fernandez.alfonso@gmial.com"</a>
 							 
 						</td>
 					</tr>
@@ -159,67 +198,66 @@ Fuente:
             
             <table class="social_links" width="100%" cellpadding="0" cellspacing="0" border="0">
   			<tbody>
-	  				<tr>
-					    <td valign="middle"   >
-					      <a href="http://www.twitter.com/alfonsabad" style="text-decoration:none;">
-					        <img alt="" height="48" src="/images/twitter.png" style="display:block; border: none;" width="48">
-					      </a>
-					    </td>
-	
-					    <td valign="middle" width="100%"  >
-					      <a href="http://www.twitter.com/alfonsabad" style="font-size: 15px; font-weight: bold; color: #333; text-decoration: none;">Twitter<br>
-					        <span style="font-size: 13px; font-weight: normal; color: #999;">@alfonsabad</span>
-					      </a>
-					    </td>
-					</tr>
-					<tr>
-						<!-- USUario github -->
-							<td valign="middle" class="tdsocial" >
-								<a href="http://github.com/alfonsofernandez" style="text-decoration:none;">
-						        	<img alt="http://github.com/alfonsofernandez" height="48" src="/images/github2.png" style="display:block; border: none;" width="48">
-						      		</a>
-						    	</td>
-	
-							<td valign="middle" width="100%" class="tdsocial" >
-									<a href="http://github.com/alfonsofernandez" style="font-size: 15px; font-weight: bold; color: #333; text-decoration: none;">Github<br>
-								     	<span style="font-size: 13px; font-weight: normal; color: #999;">@alfonsofernandez</span>
-							   		</a><br>
-							   		whatch my repos! 
-							</td>
-						<!--/end usuario github -->
-					</tr>
-					<tr>
-						<!-- usuario google plus -->
+  				<tr>
+				    <td valign="middle"   >
+				      <a href="http://www.twitter.com/alfonsabad" style="text-decoration:none;">
+				        <img alt="" height="48" src="/images/twitter.png" style="display:block; border: none;" width="48">
+				      </a>
+				    </td>
+
+				    <td valign="middle" width="100%"  >
+				      <a href="http://www.twitter.com/alfonsabad" style="font-size: 15px; font-weight: bold; color: #333; text-decoration: none;">Twitter<br>
+				        <span style="font-size: 13px; font-weight: normal; color: #999;">@alfonsabad</span>
+				      </a>
+				    </td>
+				</tr>
+				<tr>
+					<!-- USUario github -->
 						<td valign="middle" class="tdsocial" >
+							<a href=" " style="text-decoration:none;">
+					        	<img alt="" height="48" src="/images/github.png" style="display:block; border: none;" width="48">
+					      		</a>
+					    	</td>
+
+						<td valign="middle" width="100%" class="tdsocial" >
+						<a href=" " style="font-size: 15px; font-weight: bold; color: #333; text-decoration: none;">Github<br>
+						     	<span style="font-size: 13px; font-weight: normal; color: #999;">@alfonsofernandez</span>
+						   		</a>
+						 	</td>
+					<!--/end usuario github -->
+				</tr>
+				<tr>
+					<!-- usuario google plus -->
+					<td valign="middle" class="tdsocial" >
 							<a href="https://plus.google.com/115601102326911748945" style="text-decoration:none;">
-					        	<img alt="" height="48" src="/images/google2.png" style="display:block; border: none;" width="48">
-					    	</a>
-					    </td>
+					        	<img alt="" height="48" src="/images/google.png" style="display:block; border: none;" width="48">
+					      		</a>
+					    	</td>
 					
 						<td valign="middle" width="100%" class="tdsocial" >
 							<a href="http://plus.google.com/115601102326911748945" style="font-size: 15px; font-weight: bold; color: #333; text-decoration: none;">Google+<br>
 					        	<span style="font-size: 13px; font-weight: normal; color: #999;">Alfonso</span>
 					      		</a>
-					    </td>
-						<!-- /end usuario google plus -->
-					</tr>
-					<tr>
-					<!-- usuario Linked in -->
-						<td valign="middle" class="tdsocial" >
-							<a href="http://www.linkedin.com/pub/alfonso-fernandez/7/5b2/774" style="text-decoration:none;">
-					        	<img alt="" height="48" src="/images/linkedin-logo2.png" style="display:block; border: none;" width="48">
-					    	</a>
-					    </td>
+					    	</td>
+					<!-- /end usuario google plus -->
+				</tr>
+				<tr>
+				<!-- usuario Linked in -->
+					<td valign="middle" class="tdsocial" >
+							<a href=" " style="text-decoration:none;">
+					        	<img alt="" height="48" src="/images/linkedin-logo.png" style="display:block; border: none;" width="48">
+					      		</a>
+					    	</td>
 					
 						<td valign="middle" width="100%" class="tdsocial" >
-							<a href="http://www.linkedin.com/pub/alfonso-fernandez/7/5b2/774" style="font-size: 15px; font-weight: bold; color: #333; text-decoration: none;">Linked In<br>
+							<a href=" " style="font-size: 15px; font-weight: bold; color: #333; text-decoration: none;">Linked In<br>
 					        	<span style="font-size: 13px; font-weight: normal; color: #999;">Alfonso</span>
 					      		</a>
-					    </td>
-						<!-- /end Linked in  -->
-					</tr>
-				</tbody>
-			</table>            
+					    	</td>
+					<!-- /end Linked in  -->
+			  </tr>
+			</tbody></table>
+            
           </div>
         </div>
       </div>

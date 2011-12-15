@@ -122,32 +122,19 @@
 			<!-- content -->
 			<div id="content">
 				<a href="/">home</a><br>
-<h2>Comandos básicos Git</h2>
+<h2>Colorear sintaxis del código en Eclipse</h2>
     
-<style>  em { font-size: small; margin-bottom:50px }</style>
-Listado de los comandos más utilizados en el día a día trabajando con git <!--more-->, puedes  <a href="javascript:jQuery('em').toggle();">ocultar o mostrar explcaciones</a> si ya conoces lo que hace cada uno.
-<h4>Iniciar un repositorio</h4>
-<code lang="bash">git init mirepo.git</code>
-<em>Crea una carpeta en el directorio actual con el nombre mirepo.git con un subdirectorio oculto llamado .git/ donde están todos los ficheros del repositorio.</em>
-<h4>Añadir todo a el stagging area.</h4>
-<code lang="bash">git add .</code>
-<em>Añade todos los archivos modificados o nuevo a el stagging area, todo archivo en stagging area formará parte del siguiente commit</em>
-<h4>Agregar un fichero indivdual al stagging area.</h4>
-<code lang="bash">git add nombre_de_fichero.txt</code>
-<h4>Agregar ficheros modificados y hacer Commit con comentario</h4>
-<code lang="bash">git commit -a -m "nuestro comentario sobre el commit"</code>
-<em>El parametro -a indica que se ejecute el comando git add previamente, así no hay que hacerlo en 2 pasos, pero no agregará ficheros untracked, es decir agregará y hará commit de los ficheros modificados que existían previamente en el anterior commit. Si tenemos ficheros nuevos tendremos que hacer 2 pasos, git add y git commit</em>
-<h4>Git status , conocer el estado de nuestro repositorio.</h4>
-<code lang="bash">git status</code>
-<em>Nos indica cuantos commits por delante o por detrás vamos de la rama principal de desarrollo, además indica que ficheros se han modificado y cuales estan untracked ( ficheros nuevos ), Muy útil para ver lo modificado y decidir que agregaremos en el siguiente commit y que cambios echaremos para atrás</em>
-<h4>Git log , mostrar el log local de nuestro repositorio.</h4>
-<code lang="bash">git log</code>
-<em>Si el log es largo se mostrará através del comando <strong>more</strong>, para movernos por el log, usamos <strong>f</strong> (forward) para ir hacia adelante <strong>b</strong> (backwards) para ir hacia atrás y <strong>q</strong> (quit) para salir del log</em>
+Para tener el código coloreado y poder cambiar entre varios temas,
+Una formas de hacerlo es instalando <!--more--><a href="http://www.eclipsecolorthemes.org/?view=plugin">Eclipse color theme</a>
+<br>
 
-
-
-
-Fuentes: <a href="http://gitready.com/">Git ready</a> - <a href="http://gitref.org/">Git ref</a>
+Se puede instalar desde  el menu Help->Install new software 
+Agregando la url : <code lang="bash">http://eclipse-color-theme.github.com/update</code> y siguiendo con el proceso normal.
+<br>
+Una vez instalado para cambiar entre los diferentes temas hay que ir a el menu
+<code lang="bash">Window > Preferences > General > Aparence > Color theme</code>
+<br>
+<a href="http://alfonsofernandez.net/wp-content/uploads/2011/12/post_eclipse.png"><img src="http://alfonsofernandez.net/wp-content/uploads/2011/12/post_eclipse-300x210.png" alt="" title="Cambiar tema de eclipse color plugin" width="300" height="210" class="aligncenter size-medium wp-image-130" /></a>
 
 
 
