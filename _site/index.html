@@ -9,8 +9,7 @@
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    
+    <![endif]-->    
     <!-- Le styles -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/hl.snipet.css" rel="stylesheet">
@@ -40,9 +39,9 @@
     <script type="text/javascript" src="http://www.steamdev.com/snippet/js/jquery.snippet.min.js"></script>
     <script type="text/javascript" src="/js/snippet/sh_sh.min.js"></script>
 	<script>
-	$(document).ready(function(){	$("pre.javascript").snippet("javascript",{style:"whatis"}); });
-	$(document).ready(function(){	$("pre.sh").snippet("sh",{style:"whatis"}); });
-	$(document).ready(function(){	$("pre.php").snippet("php",{style:"whatis"}); });
+	$(document).ready(function(){	$("pre.javascript").snippet("javascript",{style:"whatis",menu:false}); });
+	$(document).ready(function(){	$("pre.sh").snippet("sh",{style:"whatis",menu:false, showNum:false}); });
+	$(document).ready(function(){	$("pre.php").snippet("php",{style:"whatis",menu:false}); });
 	
 
 	</script>
@@ -56,7 +55,7 @@
     	      <a class="brand" href="/">Alfonso Fdez. Abad</a>
           <ul class="nav">
             <li class="active"><a href="/">Blog</a></li>
-            <li><a href="/resume.html">Resume</a></li>            
+            <li><a href="/resume">Resume</a></li>            
           </ul>
           <!-- 
           <div class="pull-right">
@@ -75,7 +74,7 @@
         </div>
          -->
         <div class="row">
-          <div class="span10">            
+          <div class="span12">            
             <!--  Blog title -->									
 			<!-- content -->
 			<div id="content">
@@ -219,67 +218,67 @@ Fuente:
             
             <table class="social_links" width="100%" cellpadding="0" cellspacing="0" border="0">
   			<tbody>
-  				<tr>
-				    <td valign="middle"   >
-				      <a href="http://www.twitter.com/alfonsabad" style="text-decoration:none;">
-				        <img alt="" height="48" src="/images/twitter.png" style="display:block; border: none;" width="48">
-				      </a>
-				    </td>
-
-				    <td valign="middle" width="100%"  >
-				      <a href="http://www.twitter.com/alfonsabad" style="font-size: 15px; font-weight: bold; color: #333; text-decoration: none;">Twitter<br>
-				        <span style="font-size: 13px; font-weight: normal; color: #999;">@alfonsabad</span>
-				      </a>
-				    </td>
-				</tr>
-				<tr>
-					<!-- USUario github -->
+	  				<tr>
+					    <td valign="middle"   >
+					      <a href="http://www.twitter.com/alfonsabad" style="text-decoration:none;">
+					        <img alt="" height="48" src="/images/twitter.png" style="display:block; border: none;" width="48">
+					      </a>
+					    </td>
+	
+					    <td valign="middle" width="100%"  >
+					      <a href="http://www.twitter.com/alfonsabad" style="font-size: 15px; font-weight: bold; color: #333; text-decoration: none;">Twitter<br>
+					        <span style="font-size: 13px; font-weight: normal; color: #999;">@alfonsabad</span>
+					      </a>
+					    </td>
+					</tr>
+					<tr>
+						<!-- USUario github -->
+							<td valign="middle" class="tdsocial" >
+								<a href=" " style="text-decoration:none;">
+						        	<img alt="http://github.com/alfonsofernandez" height="48" src="/images/github.png" style="display:block; border: none;" width="48">
+						      		</a>
+						    	</td>
+	
+							<td valign="middle" width="100%" class="tdsocial" >
+									<a href="http://github.com/alfonsofernandez" style="font-size: 15px; font-weight: bold; color: #333; text-decoration: none;">Github<br>
+								     	<span style="font-size: 13px; font-weight: normal; color: #999;">@alfonsofernandez</span>
+							   		</a><br>
+							   		whatch my repos! 
+							</td>
+						<!--/end usuario github -->
+					</tr>
+					<tr>
+						<!-- usuario google plus -->
 						<td valign="middle" class="tdsocial" >
-							<a href=" " style="text-decoration:none;">
-					        	<img alt="http://github.com/alfonsofernandez" height="48" src="/images/github.png" style="display:block; border: none;" width="48">
-					      		</a>
-					    	</td>
-
-						<td valign="middle" width="100%" class="tdsocial" >
-								<a href="http://github.com/alfonsofernandez" style="font-size: 15px; font-weight: bold; color: #333; text-decoration: none;">Github<br>
-							     	<span style="font-size: 13px; font-weight: normal; color: #999;">@alfonsofernandez</span>
-						   		</a><br>
-						   		whatch my repos! 
-						</td>
-					<!--/end usuario github -->
-				</tr>
-				<tr>
-					<!-- usuario google plus -->
-					<td valign="middle" class="tdsocial" >
 							<a href="https://plus.google.com/115601102326911748945" style="text-decoration:none;">
 					        	<img alt="" height="48" src="/images/google.png" style="display:block; border: none;" width="48">
-					      		</a>
-					    	</td>
+					    	</a>
+					    </td>
 					
 						<td valign="middle" width="100%" class="tdsocial" >
 							<a href="http://plus.google.com/115601102326911748945" style="font-size: 15px; font-weight: bold; color: #333; text-decoration: none;">Google+<br>
 					        	<span style="font-size: 13px; font-weight: normal; color: #999;">Alfonso</span>
 					      		</a>
-					    	</td>
-					<!-- /end usuario google plus -->
-				</tr>
-				<tr>
-				<!-- usuario Linked in -->
-					<td valign="middle" class="tdsocial" >
+					    </td>
+						<!-- /end usuario google plus -->
+					</tr>
+					<tr>
+					<!-- usuario Linked in -->
+						<td valign="middle" class="tdsocial" >
 							<a href="http://www.linkedin.com/pub/alfonso-fernandez/7/5b2/774" style="text-decoration:none;">
 					        	<img alt="" height="48" src="/images/linkedin-logo.png" style="display:block; border: none;" width="48">
-					      		</a>
-					    	</td>
+					    	</a>
+					    </td>
 					
 						<td valign="middle" width="100%" class="tdsocial" >
 							<a href="http://www.linkedin.com/pub/alfonso-fernandez/7/5b2/774" style="font-size: 15px; font-weight: bold; color: #333; text-decoration: none;">Linked In<br>
 					        	<span style="font-size: 13px; font-weight: normal; color: #999;">Alfonso</span>
 					      		</a>
-					    	</td>
-					<!-- /end Linked in  -->
-			  </tr>
-			</tbody></table>
-            
+					    </td>
+						<!-- /end Linked in  -->
+					</tr>
+				</tbody>
+			</table>            
           </div>
         </div>
       </div>
