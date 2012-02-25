@@ -1,0 +1,51 @@
+--- 
+layout: post
+title: "Install Octopress on Mac OS 10.7.3"
+published: true
+meta: 
+  _edit_last: "1"
+tags: 
+- Octopress
+type: post
+status: publish
+
+categories: 
+- gnu-linux
+---
+<div>
+
+
+Instalar multiples versiones de ruby<br>
+Hay que instalar rvm <br>
+
+sudo apt-get install ruby-rvm
+<pre class="sh">
+# make sure we have $rvm_path
+source /etc/profile
+</pre>
+
+# don't use ubuntus openssl
+rvm package install openssl
+rvm install 1.9.2 --with-openssl-dir=$rvm_path/usr
+
+# Ejecutucar rvm use  para cambiar entre versión y version
+rvm install 1.9.2 && rvm use 1.9.2
+
+
+Setup Octopress
+
+1
+2
+3
+git clone git://github.com/imathis/octopress.git octopress
+cd octopress    # If you use RVM, You'll be asked if you trust the .rvmrc file (say yes).
+ruby --version  # Should report Ruby 1.9.2
+
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
+
+</div>
+
+
+
+
