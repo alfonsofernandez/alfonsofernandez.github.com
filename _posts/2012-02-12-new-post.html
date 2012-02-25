@@ -13,38 +13,17 @@ categories:
 - gnu-linux
 ---
 <div>
+	I was trying to get Octopress working on a Mac OS 10.7.3 with XCode 4.3.                  <br>
+	I found this great resource:              <br>
+	 <a href="http://aralbalkan.com/3963/comment-page-1#comment-265675">http://aralbalkan.com/3963/comment-page-1#comment-265675</a>                     <br>
+	But bundle install fails with XCode 4.3    <br>
+	You can find the reason here     <br>
+	<a href="https://github.com/thibaudgg/rb-fsevent/issues/26">https://github.com/thibaudgg/rb-fsevent/issues/26</a>                       
+	And fix it with                          <br>
+	sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/               <br>
 
-
-Instalar multiples versiones de ruby<br>
-Hay que instalar rvm <br>
-
-sudo apt-get install ruby-rvm
-<pre class="sh">
-# make sure we have $rvm_path
-source /etc/profile
-</pre>
-
-# don't use ubuntus openssl
-rvm package install openssl
-rvm install 1.9.2 --with-openssl-dir=$rvm_path/usr
-
-# Ejecutucar rvm use  para cambiar entre versión y version
-rvm install 1.9.2 && rvm use 1.9.2
-
-
-Setup Octopress
-
-1
-2
-3
-git clone git://github.com/imathis/octopress.git octopress
-cd octopress    # If you use RVM, You'll be asked if you trust the .rvmrc file (say yes).
-ruby --version  # Should report Ruby 1.9.2
-
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # This loads RVM into a shell session.
-
-</div>
+	
+</div>     
 
 
 
